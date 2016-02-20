@@ -1625,8 +1625,8 @@
   text-indent: -9999px;
   display: block;
   width: 115px;
-  height: 40px;
-  background: url(../img/stay-connected.png);
+  min-height: 40px;
+  /*background: url(http://placehold.it/154x40/png);*/
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
@@ -1793,46 +1793,46 @@
   background-position: -50px 0;
 }
 #sequence > .sequence-canvas > li.bg1 {
-  background-image: url(../img/homepage-slider/slider-bg1.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg2 {
-  background-image: url(../img/homepage-slider/slider-bg2.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg3 {
-  background-image: url(../img/homepage-slider/slider-bg3.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg4 {
-  background-image: url(../img/homepage-slider/slider-bg4.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg5 {
-  background-image: url(../img/homepage-slider/slider-bg5.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg6 {
-  background-image: url(../img/homepage-slider/slider-bg6.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg7 {
-  background-image: url(../img/homepage-slider/slider-bg7.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg8 {
-  background-image: url(../img/homepage-slider/slider-bg8.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg9 {
-  background-image: url(../img/homepage-slider/slider-bg9.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg10 {
-  background-image: url(../img/homepage-slider/slider-bg10.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg11 {
-  background-image: url(../img/homepage-slider/slider-bg11.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg12 {
-  background-image: url(../img/homepage-slider/slider-bg12.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg13 {
-  background-image: url(../img/homepage-slider/slider-bg13.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li.bg14 {
-  background-image: url(../img/homepage-slider/slider-bg14.jpg);
+  background-image: url(http://placehold.it/1920x480/);
 }
 #sequence > .sequence-canvas > li img {
   height: 96%;

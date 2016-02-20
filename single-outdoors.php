@@ -25,12 +25,6 @@
                             </div>
                             <!-- Start Post -->
                             <div class="post-content">
-                                <p>
-                                    <span>时间：<?php the_time('Y-m-d'); ?></span>
-                                    <span>领队：<?php the_field('leader'); ?></span>
-                                    <span>地点：<?php the_field('location'); ?></span>
-                                    <span><?php the_tags('', ','); ?></span>
-                                </p>
                                 <?php the_content(); ?>
                             </div>
                             <!-- End Post -->
@@ -40,7 +34,6 @@
                                 <li> <a href="#" class="Twitter"> <i class="ion-social-twitter"></i> </a> </li>
                                 <li> <a href="#" class="Linkedin"> <i class="ion-social-linkedin"></i> </a> </li>
                                 <li> <a href="#" class="Google Plus"> <i class="ion-social-googleplus"></i> </a> </li>
-                                
                             </ul>
                         </div>
                     </div>

@@ -50,15 +50,15 @@
                             <b>地址:</b> 北京市海淀区中关村三街101号3单元2楼2010室<br/>
                             <b>电话:</b> +44 123 654321<br/>
                             <b>传真:</b> +44 123 654321<br/>
-                            <b>邮箱:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
+                            <b>邮箱:</b> <a href="mailto:getintoutch@qq.com">getintoutch@qq.com</a>
                         </p>
                     </div>
                     <div class="col-footer col-md-2 col-xs-6">
                         <h3>与我们交流</h3>
                         <ul class="footer-stay-connected no-list-style">
-                            <li><a href="#" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/social-google.png);"></a></li>
-                            <li><a href="#" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/social-facebook.png);"></a></li>
                             <li><a href="#" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/social-twitter.png);"></a></li>
+                            <li><a href="#" style="margin-left: 7px;width: 100px;height: 100px; background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/wechat-qrcode.png);"></a></li>
+                            <li><a href="#" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/social-facebook.png);"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,6 +81,7 @@
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
+        <script> $(function () {$('[data-toggle="popover"]').popover() }) </script>
         <!-- wow js -->
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/wow.min.js"></script>
         <!-- slider js -->

@@ -33,8 +33,7 @@ if (have_posts()):
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h2>
                                         <div class="blog-meta">
-                                            <?php the_time('Y/m/d'); ?>
-                                            by <?php the_author(); ?>
+                                            起始日期 : <?php echo get_field('date-start') .' 至 '. get_field('date-end'); ?>
                                             <?php the_tags('标签：',',','') ?>
                                         </div>
                                         <p><?php the_excerpt(); ?></p>

@@ -1,13 +1,20 @@
 <?php 
-/**********************************
-single.php
-单独文章模板。显示单独的一篇文章时被调用。
-对于这个以及其他的请求模板，如果模板不存在会使用 index.php。
-注意区分，它用来显示“文章”，而不是“页面”。文章和页面是wp的两种截然不同的内容类型。
-***********************************/
- ?>
+/********************************
+私人定制详情单页的模板。
+此模板被调用的前提：
+- 注册自定义文章类型时，注册名称必须和这个single-$中的$一致。
+注意：
+- 如果不生效，则在后台的"固定链接"设置中如下操作：先选默认链接类型，保存。再选文章名链接类型，保存。完成。
+********************************/
+?>
+
 <?php get_header(); ?>
-<?php while (have_posts()): the_post(); ?>
+
+<?php 
+// =========Start Loading==============
+    if (have_posts()): the_post();
+// =========Start Loading============
+?>
 
             <section class="single-post">
                 <div class="container">
@@ -22,7 +29,7 @@ single.php
                             </div>
                             <!-- End Post -->
                             <ul class="social-share">
-                                <h4>分享这篇文章</h4>
+                                <h4>分享</h4>
                                 <li> <a href="#" class="Facebook"> <i class="ion-social-facebook"></i> </a> </li>
                                 <li> <a href="#" class="Twitter"> <i class="ion-social-twitter"></i> </a> </li>
                                 <li> <a href="#" class="Linkedin"> <i class="ion-social-linkedin"></i> </a> </li>
@@ -34,6 +41,10 @@ single.php
                 </div>
             </section>
 
-<?php endwhile; wp_reset_query(); ?>
+<?php 
+// ==========End Loading======
+    endif;
+// ==========End Loading======
+?>
 
 <?php get_footer(); ?>

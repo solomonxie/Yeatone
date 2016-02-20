@@ -40,13 +40,13 @@ if (have_posts()): the_post();
                     <div class="col-md-3">
                         <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                             <i class="ion-ios-email-outline"></i>
-                            <p><?php the_field('contact3'); ?></p>
+                            <h5 style="height: 3em; line-height: 3em;"><?php the_field('contact3'); ?></h5>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
                             <i class="ion-ios-telephone-outline"></i>
-                            <p><?php the_field('contact4'); ?></p>
+                            <h5 style="height: 3em; line-height: 3em;"><?php the_field('contact4'); ?></h5>
                         </div>
                     </div>
                 </div> <!-- End of contact information -->

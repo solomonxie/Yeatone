@@ -472,6 +472,7 @@ figure figcaption p {
   background: #F7F7F7;
   padding: 20px 0 40px 0;
   margin-bottom: 20px;
+  height: 190px;
 }
 #contact-section .address i,
 #contact-section .email i,

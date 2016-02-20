@@ -2,7 +2,26 @@
 /******************************************************************
     从functions.php移植过来,作为插件使用,即可适应各种主题.
     全面掌控wp的各项功能（包括注册插件、改dashboard等也在这里）
+    依赖插件列表:
+    1. Advanced Custom Fields (!!! 自定义字段功能,每个页面都靠它定制)
+    2. All-in-One WP Migration (一键站点迁移,巨好用)
+    3. Formidable (自定义表单功能, 功能齐全, 非常方便)
+    4. WP Admin UI Customize (自定义后台界面,极其强大)
+    5. WPFront User Role Editor (用户权限管理)
+    6. Duplicate Post (文章及各种自定义文章的克隆功能)
+    7. QQWorld Speed for China (必备, 前台后台页面加速)
+    8. WP-PostViews (文章浏览数统计功能)
+
+    如果想把这些功能变为插件使用,请用下面文字:
+    Plugin Name: Yeatone - Custrom functions
+    Plugin URI: http://yeatone.cn
+    Description: 
+    Version: 1.0
+    Author: Solomon Xie
+    Author URI: http://solomonxie.xyz/blog/wordpress/plugins
+
 *******************************************************************/
+
 /*
     ================================================
       Advanced Custom Field (ACF)插件的前端使用方法
