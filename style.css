@@ -1,0 +1,43 @@
+/*
+Theme Name: Yeatone - Timer Agency Theme
+Theme URI: http://www.yeatone.cn
+Author: Solomon Xie
+Author URI: http://solomon.xyz
+Description: 专为意动户外企业个性定制
+License: GNU General Public License
+License URI: http://www.opensource.org/licenses/GPL-3.0
+Tags: Business, Bootstrap
+*/
+
+@import url(assets/css/bootstrap.min.css);
+@import url(assets/css/ionicons.min.css);
+@import url(assets/css/animate.css);
+@import url(assets/css/slider.css);
+@import url(assets/css/owl.carousel.css);
+@import url(assets/css/owl.theme.css);
+@import url(assets/css/jquery.fancybox.css);
+@import url(assets/css/main.css);
+@import url(assets/css/responsive.css);
+@import url(assets/css/mPurpose.css);
+
+/*********************************  
+	WP-PageNavi插件的分页链接样式
+ *********************************/
+.wp-pagenavi { 
+	padding-top: 50px;
+	text-align: center;
+}
+.wp-pagenavi a, .wp-pagenavi span {
+	padding: 5px; margin-right: 10px;
+	font-size: 15px; color: #03719c; text-decoration: none;
+	border: 1px solid #ccc; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px;
+}
+.wp-pagenavi a:hover, .wp-pagenavi span.current {
+	background: #03719c;
+	color: #fff;
+	border: 1px solid #AFAFAF;
+}
+.wp-pagenavi span.current { font-weight: bold; }
