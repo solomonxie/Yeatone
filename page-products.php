@@ -18,46 +18,6 @@
  ?>
  <?php get_header(); ?>
 
-            <div class="section" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/mPurpose-background.png);">
-                <div class="container">
-                    <div class="section-heading">
-                        <h1 class="title wow fadeInDown" data-wow-delay=".3s"> <?php echo $cat_name ?> </h1>
-                        <p class="wow fadeInDown" data-wow-delay=".5s"> <?php echo $cat_dcri; ?> </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="products-slider">
-                                <!-- Products Slider Item -->
-                                <div class="shop-item">
-                                    <!-- Product Image -->
-                                    <div class="image"> <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/product1.jpg" alt="Product Name"></a> </div>
-                                    <!-- Product Title -->
-                                    <div class="title"> <h5 style="text-align: center;">Lorem ipsum dolor</a></div>
-                                    <!-- Buy Button -->
-                                    <div class="actions"> <a href="page-product-details.html" class="btn btn-primary">购买</a> </div>
-                                </div> <!-- //Products Slider Item -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php 
 // =========Start category loop==============
 $terms = get_terms('outfit-category');
@@ -70,73 +30,50 @@ foreach ($terms as $t):
     $cat_link = get_term_link($t, 'outfit-category');
 // =========Start category loop============
 ?>
-            <!--
-            ==================================================
-            Activities Section Start
-            ================================================== -->
-            <section id="works" class="works">
+            <div class="section" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/mPurpose-background.png);">
                 <div class="container">
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">
-                            <a href="<?php echo $cat_link; ?>"><?php echo $cat_name ?></a><a href="<?php echo $cat_link; ?>" type="button" class="btn btn-default btn-xs"><i class="ion-ios-home"></i></a> <!-- 显示更多按钮(转向此类产品的分类页) -->
+                            <!-- <a href="<?php echo $cat_link; ?>"><?php echo $cat_name ?></a> -->
+                            <?php echo $cat_name ?>
                         </h1>
-                        <p class="wow fadeInDown" data-wow-delay=".5s">
-                            <?php echo $cat_dcri; ?>
-                        </p>
-                        <p class="text-center"></p>
+                        <p class="wow fadeInDown" data-wow-delay=".5s"> <?php echo $cat_dcri; ?> </p>
                     </div>
                     <div class="row">
-    <?php 
-    // =========Start sub-posts loop==============
-        query_posts('post_type=outfits&posts_per_page='.$cat_count.'&outfit-category='.$cat_slug);
-        if (have_posts()):
-            while (have_posts()): the_post();
-                $thumbnail = get_field('thumbnail');
-                if ($thumbnail == '') $thumbnail = '';
-    // =========Start sub-posts loop============
-    ?>
-                        <!-- Start an activity -->
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-                                <div class="img-wrapper">
-                                    <img style="max-height: 210px;" src="<?php echo $thumbnail; ?>" class="img-responsive" alt="portfolio" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="<?php echo $thumbnail; ?>">看大图</a>
-                                            <a href="<?php the_permalink(); ?>">查看详细</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-	                                <h4> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h4>
-	                                <!-- <p> <?php the_excerpt(); ?> </p> -->
-                                </figcaption>
-                            </figure>
+                        <div class="col-md-12">
+                            <div class="products-slider">
+<?php 
+// =========Start sub-posts loop==============
+    query_posts('post_type=outfits&posts_per_page='.$cat_count.'&outfit-category='.$cat_slug);
+    while (have_posts()): the_post();
+        $thumbnail = get_field('thumbnail');
+        if ($thumbnail == '') $thumbnail = '';
+// =========Start sub-posts loop============
+?>
+                                <!-- Products Slider Item -->
+                                <div class="shop-item">
+                                    <!-- Product Image -->
+                                    <div class="image"> <a href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/product1.jpg" alt="Product Name"></a> </div>
+                                    <!-- Product Title -->
+                                    <div class="title"> <h5 style="text-align: center;"><?php the_title(); ?></h5></div>
+                                    <!-- Buy Button -->
+                                    <!-- <div class="actions"> <a href="<?php the_permalink(); ?>" class="btn btn-primary">购买</a> </div> -->
+                                </div> <!-- //Products Slider Item -->
+<?php 
+// ==========End sub-posts loop======
+        endwhile; wp_reset_query(); 
+// ==========End sub-posts loop======
+ ?>
+                            </div> <!-- //Slider -->
                         </div>
-                        <!-- End an activity -->
-    <?php 
-    // ==========End sub-posts loop======
-            endwhile; 
-    // ==========End sub-posts loop======
-     ?>
-                    </div>
-                    <!-- End of row -->
-    <?php 
-        
-        // ---End 输出分页导航---
-    // =======End Query=========
-        endif; wp_reset_query(); 
-    // =======End Query=========
-    ?>
-                </div>
-            </section> <!-- End of Activities -->
-
+                    </div> <!-- //row -->
+                </div> <!-- //Container -->
+            </div> <!-- //Section -->
 <?php 
 // ==========End category loop======
 endforeach;
 // ==========End category loop======
-?>
+?>            
 
-<?php if(function_exists('wpdx_paging_nav')) wpdx_paging_nav(); ?>
 
 <?php get_footer(); ?>
