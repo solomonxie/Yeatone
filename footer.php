@@ -63,7 +63,7 @@
                         <h3>与我们交流</h3>
                         <ul class="footer-stay-connected no-list-style">
                             <!-- <li><a href="#" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/social-google.png);"></a></li> -->
-                            <li><h5>关注微信公众平台</h5><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/wechat-qrcode.png" alt="Wechat QRCode"></li>
+                            <li><h5>关注微信公众平台</h5><img style="height: 100px; width: 100px;" src="<?php the_field('wechat-qrcode', '62'); ?>" alt="Wechat QRCode"></li>
                         </ul>
                     </div>
                 </div> <!-- //Stay connected colum -->
