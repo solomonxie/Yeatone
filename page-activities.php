@@ -13,7 +13,7 @@
             <section id="blog-full-width">
                 <div class="container">
                     <div class="row">
-<?php get_template_part('sidebar', 'left'); ?>
+<?php get_template_part('sidebar-left-outdoors'); ?>
                             <!-- Start 活动列表 -->
                             <div class="col-md-8">
 <?php 
@@ -30,14 +30,14 @@ if (have_posts()):
                                     </div>
                                     <div class="blog-content">
                                         <h2 class="blogpost-title">
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <a target="_blank" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h2>
                                         <div class="blog-meta">
                                             起始日期 : <?php echo get_field('date-start') .' 至 '. get_field('date-end'); ?>
                                             <?php the_tags('标签：',',','') ?>
                                         </div>
                                         <p><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">详细了解</a>
+                                        <a target="_blank" href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">详细了解</a>
                                     </div>
                                 </article>
 <?php 

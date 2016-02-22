@@ -15,7 +15,7 @@ foreach ($users as $u):
     $anime_delay += 0.3;
     $uid    = $u['ID'];
     $name   = $u['nickname'];
-    $titles = $u['titles'];
+    // $titles = $u['titles'];
     $email  = $u['user_email'];
     $intro  = get_field('intro', 'user_'.$uid);
     $img    = get_field('profile-picture', 'user_'.$uid);
@@ -28,7 +28,7 @@ foreach ($users as $u):
                                 <img src="<?php echo $img; ?>" class="team-pic" alt="">
                             </div>
                             <h3 class="team_name"><?php echo $name; ?></h3>
-                            <p class="team_designation"><?php echo $titles; ?></p>
+                            <!-- <p class="team_designation">  </p> -->
                             <p class="team_text"><?php echo $intro; ?></p>
                             <!-- <p class="social-icons">
                                 <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>

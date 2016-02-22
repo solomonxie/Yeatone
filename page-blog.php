@@ -16,7 +16,7 @@ wp后台默认的"文章列表页"中，是无法正常调用各种自定义栏�
             <section id="blog-full-width">
                 <div class="container">
                     <div class="row">
-<?php get_template_part('sidebar', 'left'); ?>
+<?php get_template_part('sidebar-left-blog'); ?>
                             <!-- Start 博客列表 -->
                             <div class="col-md-8">
 <?php 
@@ -34,7 +34,7 @@ if (have_posts()):
                                     </div>
                                     <div class="blog-content">
                                         <h2 class="blogpost-title">
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <a target="_blank" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h2>
                                         <div class="blog-meta">
                                             <?php the_time('Y/m/d'); ?>
@@ -42,7 +42,7 @@ if (have_posts()):
                                             <?php the_tags('标签：',',','') ?>
                                         </div>
                                         <p><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">继续阅读</a>
+                                        <a target="_blank" href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">继续阅读</a>
                                     </div>
                                 </article>
 <?php 
