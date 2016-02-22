@@ -24,7 +24,7 @@ if (have_posts()):
                             <tr class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="<?php echo $anime_delay; ?>s">
                                 <!-- Position -->
                                 <td class="job-position">
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="label label-danger"><?php the_field('service-ribbon-title'); ?></span>
+                                    <a target="_blank" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="label label-danger"><?php the_field('service-ribbon-title'); ?></span>
                                 </td>
                                 <!-- Location -->
                                 <td class="job-location">

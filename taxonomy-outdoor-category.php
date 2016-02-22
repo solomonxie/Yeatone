@@ -1,14 +1,10 @@
 <?php 
 /********************************
-活动列表模板。
-此模板被调用的前提：在我写的自定义文章类型插件中有详细写。
-注意：
-- 在archive-$.php中，query_posts()函数中，是不能用posts_per_paper参数的，否则获取不到。
-- page-$.php绝对不要与post_type同名，否则会与archive-$.php严重冲突。
-  这也就意味着，在page页面中，固定链接需要另外用一个名字。
+taxonomy-outdoor-category.php
+显示分类文章列表的页面。
 ********************************/
  ?>
-<?php get_header(); ?>
+ <?php get_header(); ?>
 
             <section id="blog-full-width">
                 <div class="container">
@@ -18,8 +14,8 @@
                             <div class="col-md-8">
 <?php 
 // =========Start Loop==============
-$paged = get_query_var('paged');
-query_posts('post_type=outdoors&posts_per_page=5&paged='.$paged );
+// $paged = get_query_var('paged');
+// query_posts('post_type=outdoors&posts_per_page=5&paged='.$paged );
 if (have_posts()):
     while (have_posts()): the_post();
 // =========Start Loop============

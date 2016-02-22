@@ -62,24 +62,26 @@
                                         </form>
                                     </div>
                                     <div class="author widget">
-                                        <img class="img-responsive" src="<?php the_field('left_editor_bg', get_the_ID()); ?>">
+                                        <img class="img-responsive" src="<?php the_field('left_editor_bg', '65'); ?>">
                                         <div class="author-body text-center">
                                             <div class="author-img">
-                                                <img src="<?php the_field('left_editor_photo', get_the_ID()); ?>">
+                                                <img src="<?php the_field('left_editor_photo', '65'); ?>">
                                             </div>
                                             <div class="author-bio">
-                                                <h3><?php the_field('left_editor_name', get_the_ID()); ?></h3>
-                                                <p><?php the_field('left_editor_intro', get_the_ID()); ?></p>
+                                                <h3><?php the_field('left_editor_name', '65'); ?></h3>
+                                                <p><?php the_field('left_editor_intro', '65'); ?></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="categories widget">
-                                        <h3 class="widget-head">分类</h3>
-                                        <ul>
 <?php 
 // ====Start categories loop====
 // $tx = get_object_taxonomies('post', 'names')[0];
 foreach (get_object_taxonomies(get_field('post_type'), 'names') as $tx):
+?>
+                                    <div class="categories widget">
+                                        <h3 class="widget-head">分类</h3>
+                                        <ul>
+<?php
     foreach (get_terms($tx) as $t):
         $link = get_term_link($t, 'post');
         $cat = $t->name;
@@ -87,15 +89,16 @@ foreach (get_object_taxonomies(get_field('post_type'), 'names') as $tx):
 // ====Start categories loop====
  ?>
                                             <li>
-                                                <a href="<?php echo $link; ?>"><?php echo $cat; ?></a> <span class="badge"><?php echo $count; ?></span>
+                                                <a target="_blank" href="<?php echo $link; ?>"><?php echo $cat; ?></a> <span class="badge"><?php echo $count; ?></span>
                                             </li>
 <?php 
 // ====End categories loop====
-endforeach; break; endforeach;
+    endforeach; 
 // ====End categories loop====
  ?>
                                         </ul>
                                     </div> <!-- End categories -->
+<?php break; endforeach; ?>
                                     <!-- Start Recent Posts -->
                                     <div class="recent-post widget">
                                         <h3>近期发表</h3>
@@ -109,7 +112,7 @@ foreach (wp_get_recent_posts( array('post_type'=>get_field('post_type')) ) as $p
 // ====Start rencent posts loop====
  ?>
                                             <li>
-                                                <a href="<?php echo $link; ?>"><?php echo $title; ?></a> <br>
+                                                <a target="_blank" href="<?php echo $link; ?>"><?php echo $title; ?></a> <br>
                                                 <time><?php echo $time; ?></time>
                                             </li>
 <?php 

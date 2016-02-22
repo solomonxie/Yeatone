@@ -124,6 +124,7 @@ function yeatone_custom_post_type_outfit() {
         array('outfits'), //在哪个文章类型上注册
         array(
             'hierarchical' => true,
+            'rewrite' => array('slug' => 'outfit-category'),
             'labels' => array(
                 'menu_name' => '装备一级分类',
                 'name' => '装备一级分类',
@@ -143,7 +144,6 @@ function yeatone_custom_post_type_outfit() {
             ),
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => array('slug' => 'outfit-category')
         )
     );
 }
@@ -194,6 +194,7 @@ function yeatone_custom_post_type_outdoor() {
         array('outdoors'), //在哪个文章类型上注册
         array(
             'hierarchical' => true,
+            'rewrite' => array('slug' => 'outdoor-category'),
             'labels' => array(
                 'menu_name' => '分类',
                 'name' => '分类',
@@ -213,14 +214,13 @@ function yeatone_custom_post_type_outdoor() {
             ),
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => array('slug' => 'outdoor-category')
         )
     );
 }
 add_action('init', 'yeatone_custom_post_type_outdoor'); //把这个动作(函数）挂到钩子上被自动运行
 
 function yeatone_custom_post_type_service() {
-    // 注册[户外活动]类型
+    // 注册[私人定制]类型
     register_post_type('services', array(
         'labels' => array(
             'name' => '私人定制',
@@ -264,6 +264,7 @@ function yeatone_custom_post_type_service() {
         array('services'), //在哪个文章类型上注册
         array(
             'hierarchical' => true,
+            'rewrite' => array('slug' => 'service-category'),
             'labels' => array(
                 'menu_name' => '分类',
                 'name' => '分类',
@@ -283,7 +284,6 @@ function yeatone_custom_post_type_service() {
             ),
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => array('slug' => 'outdoor-category')
         )
     );
 }

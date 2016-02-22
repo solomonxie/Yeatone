@@ -1,6 +1,6 @@
 <?php 
 /********************************
-category-outfits.php
+taxonomy-outdoor-category.php
 显示分类文章列表的页面。
 ********************************/
  ?>

@@ -53,7 +53,7 @@ foreach ($terms as $t):
                                 <!-- Products Slider Item -->
                                 <div class="shop-item">
                                     <!-- Product Image -->
-                                    <div class="image"> <a href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/product1.jpg" alt="Product Name"></a> </div>
+                                    <div class="image"> <a target="_blank" href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/product1.jpg" alt="Product Name"></a> </div>
                                     <!-- Product Title -->
                                     <div class="title"> <h5 style="text-align: center;"><?php the_title(); ?></h5></div>
                                     <!-- Buy Button -->

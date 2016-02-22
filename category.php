@@ -10,7 +10,7 @@ category.php
                 <div class="container">
                     <div class="row">
 
-<?php get_sidebar('left'); ?>
+<?php get_template_part('sidebar-left-blog'); ?>
 
                             <!-- Start 博客列表 -->
                             <div class="col-md-8">

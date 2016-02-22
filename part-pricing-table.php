@@ -28,7 +28,7 @@ if (have_posts()):
                             <p class="pricing-plan-price"><?php the_field('service-price'); ?><span><?php the_field('service-price-unit') ?></span></p>
                             <!-- Pricing Plan Features -->
                             <ul class="pricing-plan-features"> <?php the_field('service-excerpt') ?> </ul>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php the_field('service-btn-title') ?></a>
+                            <a target="_blank" href="<?php the_permalink(); ?>" class="btn btn-primary"><?php the_field('service-btn-title') ?></a>
                         </div>
                         <!-- End Pricing Plan -->
 <?php 
