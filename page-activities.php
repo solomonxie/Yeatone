@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
 /********************************
 活动列表模板。
@@ -130,5 +129,4 @@ endif; wp_reset_query();
                         </div>
                     </section>
 
->>>>>>> 9fbecb7e949ecfe8f0a71fe8a64ec1a79d36ccdc
 <?php get_footer(); ?>
