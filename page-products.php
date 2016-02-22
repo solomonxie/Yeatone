@@ -18,6 +18,46 @@
  ?>
  <?php get_header(); ?>
 
+            <div class="section" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/mPurpose-background.png);">
+                <div class="container">
+                    <div class="section-heading">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s"> <?php echo $cat_name ?> </h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s"> <?php echo $cat_dcri; ?> </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="products-slider">
+                                <!-- Products Slider Item -->
+                                <div class="shop-item">
+                                    <!-- Product Image -->
+                                    <div class="image"> <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/product1.jpg" alt="Product Name"></a> </div>
+                                    <!-- Product Title -->
+                                    <div class="title"> <h5 style="text-align: center;">Lorem ipsum dolor</a></div>
+                                    <!-- Buy Button -->
+                                    <div class="actions"> <a href="page-product-details.html" class="btn btn-primary">购买</a> </div>
+                                </div> <!-- //Products Slider Item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php 
 // =========Start category loop==============
 $terms = get_terms('outfit-category');
@@ -59,7 +99,7 @@ foreach ($terms as $t):
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper">
-                                    <img src="<?php echo $thumbnail; ?>" class="img-responsive" alt="this is a title" >
+                                    <img style="max-height: 210px;" src="<?php echo $thumbnail; ?>" class="img-responsive" alt="portfolio" >
                                     <div class="overlay">
                                         <div class="buttons">
                                             <a rel="gallery" class="fancybox" href="<?php echo $thumbnail; ?>">看大图</a>

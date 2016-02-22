@@ -23,14 +23,12 @@ wp后台默认的"文章列表页"中，是无法正常调用各种自定义栏�
 // =========Start Loop==============
 // global $paged;
 $paged = get_query_var('paged');
-query_posts('post_type=post&posts_per_page=10&paged='.$paged );
+query_posts('post_type=post&posts_per_page=5&paged='.$paged );
 if (have_posts()):
-    $anime_delay = 0.4;
     while (have_posts()): the_post();
-        $anime_delay += 0.3;
 // =========Start Loop============
 ?>
-								<article class="wow fadeInDown" data-wow-delay="<?php echo $anime_delay; ?>s" data-wow-duration="500ms">
+								<article class="wow fadeInDown">
                                     <div class="blog-post-image">
                                         <img class="img-responsive" src="<?php the_field('thumbnail'); ?>" alt="" />
                                     </div>

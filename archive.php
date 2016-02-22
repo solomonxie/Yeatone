@@ -34,7 +34,7 @@
                                         <span>地点：<?php the_field('location'); ?></span>
                                         <?php the_tags('', ','); ?>
                                     </div>
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">查看活动详细</a>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">查看详细</a>
                                 </div>
                             </article>
                         </div>

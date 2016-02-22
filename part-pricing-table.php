@@ -18,10 +18,12 @@ if (have_posts()):
 ?>
                         <!-- Pricing Plan -->
                         <div class="pricing-plan <?php echo $price_type; ?> wow fadeInDown" data-wow-duration="500ms" data-wow-delay="<?php echo $anime_delay; ?>s">
+                            <?php if (get_field('service-ribbon-title')): ?>
                             <!-- Pricing Plan Ribbon -->
                             <div class="ribbon-wrapper">
                                 <div class="price-ribbon <?php the_field('service-ribbon-color'); ?>"><?php the_field('service-ribbon-title'); ?></div>
                             </div>
+                            <?php endif; ?>
                             <h2 class="pricing-plan-title"><?php the_title(); ?></h2>
                             <p class="pricing-plan-price"><?php the_field('service-price'); ?><span><?php the_field('service-price-unit') ?></span></p>
                             <!-- Pricing Plan Features -->

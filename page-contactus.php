@@ -57,6 +57,7 @@ if (have_posts()): the_post();
                             <div class="map">
                                 <!--百度地图容器-->
                                 <div style="width:100%;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
+                                <!-- <img src="<?php the_field('map-img'); ?>" alt="map"> -->
                             </div>
                         </div>
                     </div>

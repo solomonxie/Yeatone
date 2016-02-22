@@ -19,12 +19,12 @@
 <?php 
 // =========Start Loop==============
 $paged = get_query_var('paged');
-query_posts('post_type=outdoors&posts_per_page=10&paged='.$paged );
+query_posts('post_type=outdoors&posts_per_page=5&paged='.$paged );
 if (have_posts()):
     while (have_posts()): the_post();
 // =========Start Loop============
 ?>
-                                <article class="wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">
+                                <article class="wow fadeInDown">
                                     <div class="blog-post-image">
                                         <img class="img-responsive" src="<?php the_field('thumbnail'); ?>" alt="" />
                                     </div>
@@ -37,7 +37,7 @@ if (have_posts()):
                                             <?php the_tags('标签：',',','') ?>
                                         </div>
                                         <p><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">继续阅读</a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-dafault btn-details">详细了解</a>
                                     </div>
                                 </article>
 <?php 

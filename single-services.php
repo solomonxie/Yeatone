@@ -21,25 +21,33 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="post-img">
-                                <img class="img-responsive" alt="Featured image of this post" src="<?php the_field('thumbnail'); ?>">
+                                <img class="img-responsive" alt="Featured image of this post" src="<?php the_field('service-img'); ?>">
                             </div>
                             <!-- Start Post -->
                             <div class="post-content">
                                 <?php the_content(); ?>
                             </div>
                             <!-- End Post -->
-                            <ul class="social-share">
-                                <h4>分享</h4>
-                                <li> <a href="#" class="Facebook"> <i class="ion-social-facebook"></i> </a> </li>
-                                <li> <a href="#" class="Twitter"> <i class="ion-social-twitter"></i> </a> </li>
-                                <li> <a href="#" class="Linkedin"> <i class="ion-social-linkedin"></i> </a> </li>
-                                <li> <a href="#" class="Google Plus"> <i class="ion-social-googleplus"></i> </a> </li>
-                                
-                            </ul>
                         </div>
+                        <!-- Social Share -->
+                        <div class="col-md-12">
+                            <h4>分享:</h4>
+                            <!-- JiaThis Button BEGIN -->
+                            <div class="jiathis_style_32x32">
+                                <a class="jiathis_button_weixin"></a>
+                                <a class="jiathis_button_tsina"></a>
+                                <a class="jiathis_button_tqq"></a>
+                                <a class="jiathis_button_qzone"></a>
+                                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                                <!-- <a class="jiathis_counter_style"></a> -->
+                            </div>
+                            <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                            <!-- JiaThis Button END -->
+                        </div> <!-- //Social Share -->
                     </div>
                 </div>
             </section>
+            
 
 <?php 
 // ==========End Loading======

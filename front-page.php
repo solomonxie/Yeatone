@@ -35,7 +35,7 @@ front-page.php
                                 <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
                                     <?php the_field('intro'); ?>
                                 </h2>
-                                <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green" data-section="#works" data-wow-delay=".9s" href="<?php bloginfo('url'); ?>/services/" ><?php the_field('banner_btn'); ?></a>
+                                <button class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green" data-section="#works" data-wow-delay=".9s" data-toggle="modal" data-target="#contact"><?php the_field('banner_btn'); ?></button>
                                 
                             </div>
                         </div>

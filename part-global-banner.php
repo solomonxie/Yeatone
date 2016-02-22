@@ -15,7 +15,7 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="active"><?php wp_title(''); ?></li>
+                                <li class="active"><?php the_path(); ?></li>
                             </ol>
                         </div>
                     </div>
