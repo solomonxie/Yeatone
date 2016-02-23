@@ -25,7 +25,8 @@ if (have_posts()):
                             </div>
                             <?php endif; ?>
                             <h2 class="pricing-plan-title"><?php the_title(); ?></h2>
-                            <p class="pricing-plan-price"><?php the_field('service-price'); ?><span><?php the_field('service-price-unit') ?></span></p>
+                            <!-- <p class="pricing-plan-price"><?php the_field('service-price'); ?><span><?php the_field('service-price-unit') ?></span></p> -->
+                            <img class="img-responsive" src="<?php the_field('service-img'); ?>">
                             <!-- Pricing Plan Features -->
                             <ul class="pricing-plan-features"> <?php the_field('service-excerpt') ?> </ul>
                             <a target="_blank" href="<?php the_permalink(); ?>" class="btn btn-primary"><?php the_field('service-btn-title') ?></a>
