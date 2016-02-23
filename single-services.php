@@ -25,7 +25,7 @@
                             </div>
                             <!-- Start Post -->
                             <div class="post-content">
-                                <?php the_content(); ?>
+                                <?php the_field('service-details'); ?>
                             </div>
                             <!-- End Post -->
                         </div>

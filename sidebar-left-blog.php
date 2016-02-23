@@ -126,7 +126,7 @@ endforeach;
                                     <div class="widget text-center">
                                         <h3>微信扫一扫</h3>
                                         <img class="img-responsive" src="<?php the_field('wechat-qrcode', '62'); ?>" alt="">
-                                    </div>
+                                    </div> <!-- //Sharing QRCode -->
                                 </div>
                             </div>
                             <!-- End Sidebar -->
