@@ -13,7 +13,7 @@ taxonomy-outdoor-category.php
             <section id="works" class="works">
                 <div class="container">
                     <div class="section-heading">
-                        <p class="wow fadeInDown" data-wow-delay=".5s"> <?php echo $cat_dcri; ?> </p>
+                        <!-- <p class="wow fadeInDown" data-wow-delay=".5s"> 分类介绍 </p> -->
                     </div>
                     <div class="row">
 <?php 
@@ -30,7 +30,7 @@ taxonomy-outdoor-category.php
                                     <img src="<?php the_field('thumbnail'); ?>" class="img-responsive" alt="this is a title" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="<?php the_field('thumbnail'); ?>">看大图</a>
+                                            <a target="_blank" rel="gallery" class="fancybox" href="<?php the_field('order-link'); ?>">购买</a>
                                             <a target="_blank" href="<?php the_permalink(); ?>">查看详细</a>
                                         </div>
                                     </div>
