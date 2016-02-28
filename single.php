@@ -7,8 +7,8 @@ single.php
 ***********************************/
  ?>
 <?php get_header(); ?>
-<?php while (have_posts()): the_post(); ?>
 
+<?php while (have_posts()): the_post(); ?>
             <section class="single-post">
                 <div class="container">
                     <div class="row">

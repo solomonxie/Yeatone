@@ -23,7 +23,7 @@ wp后台默认的"文章列表页"中，是无法正常调用各种自定义栏�
 // =========Start Loop==============
 // global $paged;
 $paged = get_query_var('paged');
-query_posts('post_type=post&posts_per_page=5&paged='.$paged );
+query_posts('post_type=post&paged='.$paged );
 if (have_posts()):
     while (have_posts()): the_post();
 // =========Start Loop============

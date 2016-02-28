@@ -15,7 +15,7 @@
 <?php 
 // ***********开始循环***************
 $orderby = ''; //按什么排序?
-query_posts('post_type=services&posts_per_page=4&orderby='.$orderby);
+query_posts('post_type=services&posts_per_page=-1&orderby='.$orderby);
 if (have_posts()):
     $anime_delay = 0.7;
     while (have_posts()): the_post();

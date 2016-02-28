@@ -47,7 +47,7 @@ if (function_exists('wp_bs_pagination')) {
 }
 // ---End 输出分页导航---
 // =======End Query=========
-endif; wp_reset_query(); 
+endif; //wp_reset_query(); 
 // =======End Query=========
  ?>
             </div>

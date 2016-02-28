@@ -19,7 +19,7 @@
 <?php 
 // =========Start Loop==============
 $paged = get_query_var('paged');
-query_posts('post_type=outdoors&posts_per_page=5&paged='.$paged );
+query_posts('post_type=outdoors&paged='.$paged );
 if (have_posts()):
     while (have_posts()): the_post();
 // =========Start Loop============

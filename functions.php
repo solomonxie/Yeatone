@@ -36,7 +36,9 @@ function the_path() {
     $title = '';
     // 获取页面
     if (is_page()) $title = '<li>'.get_the_title().'</li>';
-    if (is_single()) {
+    elseif (is_category()) $title = '<li>分类</li><li>'.get_the_category()[0]->cat_name.'</li>';
+    elseif (is_tax()) $title = '<li>分类</li>';
+    elseif (is_single()) {
         if (get_post_type()=='outdoors') {
             $title .= '<li><a href="'.get_permalink('195').'">户外活动</a></li><li>活动详情</li>';
         } elseif (get_post_type()=='outfits') {
