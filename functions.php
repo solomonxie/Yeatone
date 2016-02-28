@@ -34,8 +34,19 @@ remove_action('init', '_wp_admin_bar_init');
 /*自定义函数: 获取当前页面的路径*/
 function the_path() {
     $title = '';
-    if (is_front_page()) $title = the_title();
-    else $title = wp_title('');
+    // 获取页面
+    if (is_page()) $title = '<li>'.get_the_title().'</li>';
+    if (is_single()) {
+        if (get_post_type()=='outdoors') {
+            $title .= '<li><a href="'.get_permalink('195').'">户外活动</a></li><li>活动详情</li>';
+        } elseif (get_post_type()=='outfits') {
+            $title .= '<li><a href="'.get_permalink('174').'">户外装备</a></li><li>装备详情</li>';
+        } elseif (get_post_type()=='services') {
+            $title .= '<li><a href="'.get_permalink('95').'">私人定制</a></li><li>定制详情</li>';
+        } else {
+            $title .= '<li><a href="'.get_permalink('65').'">官方博客</a></li><li>文章详情</li>';
+        }
+    }
     echo $title;
     return
     $subs = '';

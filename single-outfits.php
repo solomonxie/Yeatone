@@ -29,7 +29,7 @@
                     <!-- End Image Column -->
                     <!-- Project Info Column -->
                     <div class="portfolio-item-description col-sm-6">
-                        <h3>详情</h3>
+                        <h3>装备细节</h3>
                         <?php the_field('outfit-details'); ?>
                         <p><a target="_blank" href="<?php the_field('order-link'); ?>" class="btn btn-primary">前往购买</a></p>
                     </div>
@@ -37,6 +37,23 @@
                 </div>
                 <div class="row" style="margin-top: 50px; margin-left: 10px;">
                     <?php the_content(); ?>
+                </div>
+                <div class="row">
+                    <!-- Social Share -->
+                    <div class="col-md-12">
+                        <h4>分享:</h4>
+                        <!-- JiaThis Button BEGIN -->
+                        <div class="jiathis_style_32x32">
+                            <a class="jiathis_button_weixin"></a>
+                            <a class="jiathis_button_tsina"></a>
+                            <a class="jiathis_button_tqq"></a>
+                            <a class="jiathis_button_qzone"></a>
+                            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                            <!-- <a class="jiathis_counter_style"></a> -->
+                        </div>
+                        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                        <!-- JiaThis Button END -->
+                    </div> <!-- //Social Share -->
                 </div>
             </div>
         </div>

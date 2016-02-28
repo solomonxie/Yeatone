@@ -12,10 +12,11 @@
                                 <li>
                                     <a href="<?php bloginfo('url'); ?>">
                                         <i class="ion-ios-home"></i>
-                                        Home
+                                        首页
                                     </a>
                                 </li>
-                                <li class="active"><?php the_path(); ?></li>
+                                <!-- <li class="active"></li> -->
+                                <?php the_path(); ?>
                             </ol>
                         </div>
                     </div>
