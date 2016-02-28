@@ -8,10 +8,10 @@ function yeatone_custom_post_type_outfit() {
     register_post_type('outfits', array(
         'labels' => array( // 后台管理的各项显示名称。只管显示，不影响各处调用，随便改。
             'name' => '户外装备',
-            'singular_name' => '装备二级分类',
-            'add_new' => '添加二级分类',
-            'all_items' => '所有二级分类',
-            'add_new_item' => '添加二级分类',
+            'singular_name' => '装备',
+            'add_new' => '添加装备',
+            'all_items' => '所有装备',
+            'add_new_item' => '添加装备',
             'edit_item' => '编辑',
             'new_item' => '新项目',
             'view_item' => '浏览装备',
@@ -50,8 +50,8 @@ function yeatone_custom_post_type_outfit() {
             'hierarchical' => true,
             'rewrite' => array('slug' => 'outfit-category'),
             'labels' => array(
-                'menu_name' => '装备一级分类',
-                'name' => '装备一级分类',
+                'menu_name' => '装备分类',
+                'name' => '装备分类',
                 'singular_name' => 'outfit-cat',
                 'search_items' =>  '搜索',
                 'popular_items' => '热门',

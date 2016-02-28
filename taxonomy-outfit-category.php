@@ -6,15 +6,6 @@ taxonomy-outdoor-category.php
  ?>
  <?php get_header(); ?>
 
-<?php 
-// =========Start category loop==============
-// $terms = get_terms('outfit-category');
-// foreach ($terms as $t):
-//     $cat_name = $t->name;
-//     $cat_dcri = $t->description;
-//     $cat_link = get_term_link($t, 'outfit-category');
-// =========Start category loop============
-?>
             <!--
             ==================================================
             Activities Section Start
@@ -77,3 +68,5 @@ taxonomy-outdoor-category.php
             </section> <!-- End of Activities -->
 
 <?php if(function_exists('wpdx_paging_nav')) wpdx_paging_nav(); ?>
+
+<?php get_footer(); ?>

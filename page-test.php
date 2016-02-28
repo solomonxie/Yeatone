@@ -30,12 +30,27 @@
 // //===输出某分类法下的所有自定义分类名/别名/文章数/描述/链接===
 // $terms = get_terms('outfit-category');
 // foreach ($terms as $t) { 
-// 	echo $t->name  .'<br>';
-// 	echo $t->slug .'<br>'; 
-// 	echo $t->count .'<br>'; 
-// 	echo $t->description .'<br>'; 
-// 	echo get_term_link($t, 'outfit-category') .'<br>'; 
+// 	echo '父级分类:'.$t->term_id  .' | ';
+// 	echo '父级分类:'.$t->name  .' | ';
+// 	echo '父级分类:'.$t->slug .' | '; 
+// 	echo '父级分类:'.$t->parent.' | ';
+// 	echo '父级分类:'.$t->count .' | '; 
+// 	echo '父级分类:'.$t->description .' | '; 
+// 	echo '父级分类:'.get_term_link($t, 'outfit-category') .' | '; 
 // }
+
+// ===用get_category()获取更多分类信息===
+$terms = get_terms('outfit-category');
+foreach ($terms as $t) {
+	// get_category()虽然也是获得一个term, 但是含更多信息
+	$cat = get_category($t->term_id);
+	echo '当前分类:'.$cat->term_id.' | ';
+	echo '父级分类:'.$cat->parent.' | ';
+	echo '分类名称:'.$cat->name.' | ';
+	echo '分裂法:'.$cat->taxonomy.' | ';
+	echo '文章数量:'.$cat->count.' | '; //分类下posts数量
+	echo '<br>';
+}
 
 // //===分别循环读取某文章类型某分类法下的所有文章===
 // $terms = get_terms('outfit-category');
@@ -166,8 +181,7 @@
 	// $menu_list now ready to output*/
  ?>
 
- <h1>
- 	<?php 
+<?php 
  		// 获取某用户的自定义字段
  		// 用法:第二个参数为user_$, 其中$为用户id,在url中可以看到.没有显示的,肯定就是1.
  		// the_field('photo', 'user_1'); 
@@ -203,16 +217,13 @@
 		// 获取单个用户(用于field type为单项时)
 		// echo get_field('user')['display_name'];
 		// 获取多个用户(用于field type为多选时)
- 	?>
- </h1>
+?>
 
- <h1>
- <?php 
- 	$posts = get_posts('post_type=services');
+ <?php
+ 	/*$posts = get_posts('post_type=services');
  	foreach ($posts as $po): the_post();
  		$pid = $po->ID;
  		echo the_title() .'<br>';
  		echo get_field('service-ribbon-color') .'<br>';
-	endforeach;
-  ?>
- </h1>
+	endforeach;*/
+?>

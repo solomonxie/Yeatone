@@ -19,23 +19,29 @@
  <?php get_header(); ?>
 
 <?php 
-// =========Start category loop==============
-$terms = get_terms('outfit-category');
+// =========Start top loop==============
+$tax = 'outfit-category';
+$terms = get_terms($tax);
 $cat_count = ''; // 默认显示所有
 // $cat_count = get_field('sub-category-count');
 foreach ($terms as $t):
+    $cat_id = $t->term_id;
     $cat_name = $t->name;
     $cat_slug = $t->slug;
     $cat_dcri = $t->description;
-    $cat_link = get_term_link($t, 'outfit-category');
-// =========Start category loop============
+    $cat_link = get_term_link($t, $tax);
+    // 查询此分类下的所有子级分类(包括二级,三级分类等等)
+    $sub_terms  = get_term_children($t->term_id, $tax);
+    // 只读取一级分类
+    if (count($sub_terms) > 0 and $t->parent == '0'):
+// =========Start top loop============
 ?>
             <div class="section" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images-default/mPurpose-background.png);">
                 <div class="container">
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">
                             <!-- <a href="<?php echo $cat_link; ?>"><?php echo $cat_name ?></a> -->
-                            <?php echo $cat_name ?>
+                            <?php echo $cat_name; ?>
                         </h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s"> <?php echo $cat_dcri; ?> </p>
                     </div>
@@ -43,36 +49,41 @@ foreach ($terms as $t):
                         <div class="col-md-12">
                             <div class="products-slider">
 <?php 
-// =========Start sub-posts loop==============
-    query_posts('post_type=outfits&posts_per_page='.$cat_count.'&outfit-category='.$cat_slug);
-    while (have_posts()): the_post();
-        $thumbnail = get_field('thumbnail');
-        if ($thumbnail == '') $thumbnail = '';
-// =========Start sub-posts loop============
+// =========Start sub loop==============
+        // 只读取本一级分类中的二级分类
+        foreach ($sub_terms as $sub_id):
+            $st = get_term_by('id', $sub_id, $tax);
+            if ($st->parent == $cat_id):
+                $st_link = get_term_link($st, $tax);
+                echo $st->name;
+// =========Start sub loop============
 ?>
                                 <!-- Products Slider Item -->
                                 <div class="shop-item">
                                     <!-- Product Image -->
-                                    <div class="image"> <a target="_blank" href="<?php the_permalink(); ?>"><img style="max-width: 260px; max-height: 160px;" src="<?php the_field('thumbnail'); ?>" alt="Product Thumbnail"></a> </div>
+                                    <div class="image"> <a target="_blank" href="<?php echo $st_link; ?>"><img style="max-width: 260px; max-height: 160px;" src="<?php the_field('taxonomy-image', $st); ?>" alt="Thumbnail"></a> </div>
                                     <!-- Product Title -->
-                                    <div class="title"> <h5 style="text-align: center;"><?php the_title(); ?></h5></div>
+                                    <div class="title"> 
+                                        <h5 style="text-align: center;"><?php echo $st->name; ?>
+                                    </div>
                                     <!-- Buy Button -->
                                     <!-- <div class="actions"> <a href="<?php the_permalink(); ?>" class="btn btn-primary">购买</a> </div> -->
                                 </div> <!-- //Products Slider Item -->
 <?php 
-// ==========End sub-posts loop======
-        endwhile; wp_reset_query(); 
-// ==========End sub-posts loop======
- ?>
+// ==========End sub loop======
+        endif; endforeach; // --结束子目录循环--
+    endif;
+// ==========End sub loop======
+?>
                             </div> <!-- //Slider -->
                         </div>
                     </div> <!-- //row -->
                 </div> <!-- //Container -->
             </div> <!-- //Section -->
 <?php 
-// ==========End category loop======
+// ==========End top loop======
 endforeach;
-// ==========End category loop======
+// ==========End top loop======
 ?>            
 
 <?php get_footer(); ?>
