@@ -63,7 +63,6 @@
                                     </ul>
                                 </div> -->
                                 <div class="sidebar-offcanvas">
-                        
                                   <div class="list-group">
                                     <!-- <a href="#" class="list-group-item active">Link</a>
                                     <a href="#" class="list-group-item">Link</a> -->
@@ -82,12 +81,12 @@ foreach ($terms as $t):
     // 查询此分类下的所有子级分类(包括二级,三级分类等等)
     $sub_terms  = get_term_children($t->term_id, $tax);
     if (count($sub_terms) > 0 and $t->parent == '0'): // 只读取一级分类
-        echo '<a href="#" class="list-group-item active">'. $cat_name .'</a>';
+        echo '<a href="'.$cat_link.'" class="list-group-item active">'. $cat_name .'</a>';
         foreach ($sub_terms as $sub_id):
             $st = get_term_by('id', $sub_id, $tax);
             if ($st->parent == $cat_id): //只读取二级分类
                 $st_link = get_term_link($st, $tax);
-                echo '<a href="#" class="list-group-item">'. $st->name .' <span class="badge">'.$st->count.'</span></a>';
+                echo '<a target="_blank" href="'.$st_link.'" class="list-group-item">'. $st->name .' <span class="badge">'.$st->count.'</span></a>';
             endif;
         endforeach;
     endif;

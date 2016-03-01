@@ -1330,6 +1330,7 @@
   -ms-transition: all .5s ease;
   transition: all .5s ease;
 }
+/*.portfolio-item:hover {border: 2px solid #4f8db3; }*/
 .portfolio-item .portfolio-image {
   overflow: hidden;
   text-align: center;
@@ -1342,9 +1343,6 @@
   -o-transition: all .25s ease;
   -ms-transition: all .25s ease;
   transition: all .25s ease;
-}
-.portfolio-item:hover {
-  border: 2px solid #4f8db3;
 }
 .portfolio-item:hover .portfolio-image img {
   position: relative;
