@@ -86,7 +86,7 @@ foreach ($terms as $t):
             $st = get_term_by('id', $sub_id, $tax);
             if ($st->parent == $cat_id): //只读取二级分类
                 $st_link = get_term_link($st, $tax);
-                echo '<a target="_blank" href="'.$st_link.'" class="list-group-item">'. $st->name .' <span class="badge">'.$st->count.'</span></a>';
+                echo '<a href="'.$st_link.'" class="list-group-item">'. $st->name .' <span class="badge">'.$st->count.'</span></a>';
             endif;
         endforeach;
     endif;
