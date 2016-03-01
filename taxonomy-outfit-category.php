@@ -6,36 +6,42 @@ taxonomy-outdoor-category.php
  ?>
  <?php get_header(); ?>
 
-<!-- 
-        ================================================== 
-            Service Page Section  Start
-        ================================================== -->
-        <div class="section">
-            <div class="container">
+             <section id="blog-full-width">
+                <div class="container-fluid">
+                    <div class="row">
+<?php get_template_part('sidebar-left-outfits'); ?>
+                    <!-- Start 博客列表 -->
+                    <div class="col-md-8">
 <?php 
 // =========Start posts loop==============
-    // query_posts('post_type=outfits&posts_per_page=8&outfit-category='.$t->slug);
+    query_posts('post_type=outfits&posts_per_page=20&paged='.get_query_var('paged').'&outfit-category='.get_query_var('outfit-category'));
     if (have_posts()):
-        while (have_posts()): the_post();
+        $n = 0; $item_per_row = 4;
+        while (have_posts()): the_post(); $n+=1;
 // =========Start posts loop============
 ?>
-                <div class="row service-wrapper-row">
-                    <div class="col-sm-4">
-                        <div class="service-image">
-                            <a target="_blank" rel="gallery" class="fancybox" href="<?php the_permalink(); ?>"> <img src="<?php the_field('thumbnail'); ?>" alt="Service Name"> </a>
+<?php if ($n==1) {echo '<div class="row">';} ?>
+                        <!-- Single Item -->
+                        <div class="col-sm-3 col-xs-12">
+                            <figure class="wow fadeInLeft portfolio-item">
+                                <div class="img-wrapper">
+                                    <a target="_blank" href="<?php the_permalink(); ?>"><img src="<?php the_field('thumbnail'); ?>" class="img-responsive" alt="this is a title" ></a>
+                                </div>
+                                <figcaption>
+                                    <h4> <a target="_blank" href="<?php the_permalink(); ?>"><?php the_title(); ?> </a> </h4>
+                                </figcaption>
+                            </figure>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <h3> <a target="_blank" rel="gallery" class="fancybox" href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a></h3>
-                        <p> 简介:<?php the_excerpt(); ?> </p>
-                        <a target="_blank" href="<?php the_field('order-link'); ?>" class="btn btn-primary">购买</a> 或 
-                        <a target="_blank" href="<?php the_permalink(); ?>" class="">查看详细</a>
-                    </div>
-                </div>
+                        <!-- //Single Item -->
+<?php if ($n==$item_per_row) {echo '</div> <!-- //row -->'; $n=0;} ?>
 <?php 
 // ==========End pasts loop======
         endwhile; 
 // ==========End posts loop======
+ ?>
+                     </div>
+
+<?php 
 // ---Start 输出分页导航---
 if (function_exists('wp_bs_pagination')) { 
     wp_bs_pagination(); //网上摘抄函数做的插件,专为Bootstrap样式.
@@ -47,11 +53,12 @@ if (function_exists('wp_bs_pagination')) {
 }
 // ---End 输出分页导航---
 // =======End Query=========
-endif; //wp_reset_query(); 
+endif; wp_reset_query(); 
 // =======End Query=========
- ?>
-            </div>
-        </div>
+?>
+                    </div> <!-- //row -->
+                </div>
+            </section>
 
 <?php if(function_exists('wpdx_paging_nav')) wpdx_paging_nav(); ?>
 
