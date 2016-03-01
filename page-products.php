@@ -55,7 +55,7 @@ foreach ($terms as $t):
             $st = get_term_by('id', $sub_id, $tax);
             if ($st->parent == $cat_id):
                 $st_link = get_term_link($st, $tax);
-                echo $st->name;
+                // echo $st->name;
 // =========Start sub loop============
 ?>
                                 <!-- Products Slider Item -->

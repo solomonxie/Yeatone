@@ -11,6 +11,9 @@ search.php
     <input type="text" name='s'>
     <button type="button">搜索</button>
 </form>
+获取方法:
+1. get_query_var('s'); //这个是专门为WP_Query()准备的获取方法,自定义表单值获取不到.预定有s等
+2. $_GET['name'] 或 $_POST['name'], 用于获取get方法或post方法的表单值.
 ********************************/
  ?>
 <?php get_header(); ?>
@@ -19,7 +22,11 @@ search.php
                 <div class="container">
                     <div class="row">
 
-<?php get_template_part('sidebar-left-blog'); ?>
+<?php
+    $sidebar = $_GET['sidebar'];
+    if (!$sidebar) $sidebar = $_POST['sidebar'];
+    get_template_part($sidebar);
+ ?>
 
                             <!-- Start 博客列表 -->
                             <div class="col-md-8">

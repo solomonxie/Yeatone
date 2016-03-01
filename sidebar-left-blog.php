@@ -46,6 +46,10 @@
 // //根据条件循环输出文章信息 (注意:括号里不能直接引用get_posts(),否则不能正常显示.)
 // foreach ($posts as $po) { the_post(); the_permalink() .'<br>'; } 
  ?>
+<?php 
+    // $post_type = get_field('post_type'); //利用ACF插件获取当前文章类型
+    $post_type = 'outdoors'; //手动指定当前文章类型
+?>
 <h1><?php //echo get_the_ID(); ?></h1>
 
                         <!-- Start Sidebar -->
@@ -54,79 +58,80 @@
                                 <div class="search widget">
                                     <form action="<?php bloginfo('url'); ?>" method="get" class="searchform" role="search">
                                         <div class="input-group">
+                                            <input type="hidden" name="sidebar" value="sidebar-left-blog">
                                             <input type="text" name='s' class="form-control" placeholder="搜索文章...">
                                             <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button"> <i class="ion-search"></i> </button>
+                                                <button type="submit" class="btn btn-default" type="button"> <i class="ion-search"></i> </button>
                                             </span>
-                                            </div><!-- /input-group -->
-                                        </form>
-                                    </div>
-                                    <div class="author widget">
-                                        <img class="img-responsive" src="<?php the_field('left_editor_bg', '65'); ?>">
-                                        <div class="author-body text-center">
-                                            <div class="author-img">
-                                                <img src="<?php the_field('left_editor_photo', '65'); ?>">
-                                            </div>
-                                            <div class="author-bio">
-                                                <h3><?php the_field('left_editor_name', '65'); ?></h3>
-                                                <p><?php the_field('left_editor_intro', '65'); ?></p>
-                                            </div>
+                                        </div><!-- /input-group -->
+                                    </form>
+                                </div>
+                                <div class="author widget">
+                                    <img class="img-responsive" src="<?php the_field('left_editor_bg', '65'); ?>">
+                                    <div class="author-body text-center">
+                                        <div class="author-img">
+                                            <img src="<?php the_field('left_editor_photo', '65'); ?>">
+                                        </div>
+                                        <div class="author-bio">
+                                            <h3><?php the_field('left_editor_name', '65'); ?></h3>
+                                            <p><?php the_field('left_editor_intro', '65'); ?></p>
                                         </div>
                                     </div>
+                                </div>
 <?php 
 // ====Start categories loop====
-// $tx = get_object_taxonomies('post', 'names')[0];
-foreach (get_object_taxonomies(get_field('post_type'), 'names') as $tx):
+// $tx = get_object_taxonomies($post_type, 'names')[0];
+foreach (get_object_taxonomies($post_type, 'names') as $tx):
 ?>
-                                    <div class="categories widget">
-                                        <h3 class="widget-head">分类</h3>
-                                        <ul>
+                                <div class="categories widget">
+                                    <h3 class="widget-head">分类</h3>
+                                    <ul>
 <?php
     foreach (get_terms($tx) as $t):
-        $link = get_term_link($t, 'post');
+        $link = get_term_link($t, $post_type);
         $cat = $t->name;
         $count = $t->count;
 // ====Start categories loop====
  ?>
-                                            <li>
-                                                <a href="<?php echo $link; ?>"><?php echo $cat; ?></a> <span class="badge"><?php echo $count; ?></span>
-                                            </li>
+                                        <li>
+                                            <a href="<?php echo $link; ?>"><?php echo $cat; ?></a> <span class="badge"><?php echo $count; ?></span>
+                                        </li>
 <?php 
 // ====End categories loop====
 endforeach; 
 // ====End categories loop====
  ?>
-                                        </ul>
-                                    </div> <!-- End categories -->
+                                    </ul>
+                                </div> <!-- End categories -->
 <?php break; endforeach; ?>
-                                    <!-- Start Recent Posts -->
-                                    <div class="recent-post widget">
-                                        <h3>近期发表</h3>
-                                        <ul>
+                                <!-- Start Recent Posts -->
+                                <div class="recent-post widget">
+                                    <h3>近期发表</h3>
+                                    <ul>
 <?php 
 // ====Start rencent posts loop====
-foreach (wp_get_recent_posts( array('post_type'=>get_field('post_type')) ) as $po):
+foreach (wp_get_recent_posts( array('post_type'=>$post_type) ) as $po):
     $link = get_the_permalink($po['ID']);
     $title = get_the_title($po['ID']);
     $time = get_the_time('Y/m/d', $po['ID']);
 // ====Start rencent posts loop====
  ?>
-                                            <li>
-                                                <a href="<?php echo $link; ?>"><?php echo $title; ?></a> <br>
-                                                <time><?php echo $time; ?></time>
-                                            </li>
+                                        <li>
+                                            <a href="<?php echo $link; ?>"><?php echo $title; ?></a> <br>
+                                            <time><?php echo $time; ?></time>
+                                        </li>
 <?php 
 // ====End rencent posts loop====
 endforeach;
 // ====End rencent posts loop====
  ?>
-                                        </ul>
-                                    </div> <!-- End Recent Posts -->
-                                    <!-- Sharing QRCode -->
-                                    <div class="widget text-center">
-                                        <h3>微信扫一扫</h3>
-                                        <img class="img-responsive" src="<?php the_field('wechat-qrcode', '62'); ?>" alt="">
-                                    </div> <!-- //Sharing QRCode -->
-                                </div>
+                                    </ul>
+                                </div> <!-- End Recent Posts -->
+                                <!-- Sharing QRCode -->
+                                <div class="widget text-center">
+                                    <h3>微信扫一扫</h3>
+                                    <img class="img-responsive" src="<?php the_field('wechat-qrcode', '62'); ?>" alt="">
+                                </div> <!-- //Sharing QRCode -->
                             </div>
-                            <!-- End Sidebar -->
+                        </div>
+                        <!-- End Sidebar -->
