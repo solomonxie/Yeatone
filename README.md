@@ -1,4 +1,1 @@
-# Yeatone
-A corp website powered by Wordpress.
-
-## It will be more convenient.
+# Wordpress dashboard for managing Yeatone's official website. 
